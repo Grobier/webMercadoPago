@@ -1,0 +1,323 @@
+/* Restablecer márgenes y padding predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Estilos generales del body */
+body.paginadeinicio {
+    background-image: url('../imagenes/imagen\ de\ fondo.png');
+    background-position: center top;
+    background-size: cover; /* Ajustado a cover para cubrir todo el área */
+    background-repeat: no-repeat;
+    min-height: 100vh; /* el contenido mínimo sea la altura de la ventana */     
+}
+main section .titulocentro {
+    margin-top: 100px;
+    margin-left: 80px;
+    margin-right: 300px;
+    font-size: 120px;
+    color: white;
+    font-family: "Bebas Neue", sans-serif;
+    line-height: 0.8;
+    letter-spacing: 0.5px;
+}
+main section .titulocentro:hover{
+    color:rgb(255, 255, 255);
+    transform: scale(1.1);
+    transition: 0.1s;
+    
+}
+main section .subtitulocentro {
+    margin-left: 80px;
+    margin-right: 300px;
+    margin-bottom: 80px;
+    color: white;
+    font-family: "Nixie One", sistema-ui;
+    font-size: 45px;
+    text-shadow: 3px 8px 5px rgb(0, 0, 0, 0.5);        
+}
+main section .subtitulocentro:hover{
+    color:rgb(255, 255, 255);
+    transform: scale(1.1);
+    transition: 0.1s;
+}
+main section #botondeinicio {
+    margin-left: 80px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: "Nixie One", sistema-ui;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    letter-spacing: 5px;
+    display: inline-block;
+}
+main section #botondeinicio:hover {
+    color:grey;
+    background-color: white;
+    transform: scale(1.1);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;        
+}
+
+
+/* Estilos del header */
+header {
+    font-family: "Nixie One", sistema-ui;
+    font-weight:lighter;
+    width: 100%;
+}
+.logo a img{
+    width:50px; /*tamaño del logo */
+    height: auto;
+    position: absolute;
+    top:10px;
+    left:50px;
+ }
+/* Estilos del nav ul y li */
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 25px 15px; 
+}
+
+/* Estilos del nav ul li a */
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1em; 
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+/* Estilos para los enlaces al pasar el ratón */
+nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+
+footer{
+    
+    background-color:rgb(255, 255, 255, 0.5);
+    color: rgb(0, 0, 0, 0.5);
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 0px;
+    
+
+}
+/*---------------------------------------------------------------------------------------------------------------*/
+ /*estilo pagina servicios*/
+
+ .bodypage{
+    background-image: url('../imagenes/imagen\ de\ fondo.png');
+    background-size: cover; /* Ajustado a cover para cubrir todo el área */
+    background-repeat:no-repeat;
+    backdrop-filter: blur(20px); 
+    min-height: 100vh; /* Tamaño mínimo igual a la altura del viewport */
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    min-height: 73vh; /* Ajusta según tus necesidades */
+    padding: 0px;
+    box-sizing: border-box;
+}
+    
+ main .bannerservicios{
+    background-image: url(../imagenes/Banner\ web\ gimnasio\ duotono\ violeta.png);
+    background-position: center;
+    background-size: cover; /* Ajustado a cover para cubrir todo el área */
+    background-repeat: no-repeat;
+    min-height: 45vh; /* Asegura que el contenido mínimo sea la altura de la ventana */
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos hijos se alineen en columna */
+    justify-content: center; /* Alinea los elementos verticalmente en el centro */      
+}
+main div .tituloservicios{
+    color: rgb(148, 148, 148);
+    font-size: 100px;
+    font-family: "Bebas Neue", sans-serif;
+    margin-right: 30px;
+    display: column;
+    text-align: right;
+    margin-top: 130px;
+    line-height: 0.7;     
+}
+main div .subtituloservicios{
+    color: rgb(148, 148, 148);
+    font-size: 23px;
+    font-family: "Nixie One", sistema-ui;
+    margin-right: 30px;
+    display: column;
+    text-align: right;         
+}
+
+main .containerservicios{
+    display: flex; /* Habilita el modelo de caja flexible */
+    flex-wrap: nowrap; /* Evita que los artículos se envuelvan a la siguiente línea */
+    justify-content: space-around; /* Distribuye los artículos de manera uniforme en la línea */ 
+    gap: 15px;  
+}
+
+main .containerservicios .articuloservicio img{
+    width: 200px;
+    border: 5px;
+    margin-top: 10px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+main .containerservicios .articuloservicio{
+    width: 30%; /* Ajusta el ancho de cada artículo según tu diseño */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea los elementos hijos al centro horizontal */
+    padding: 20px 0 20px 0;
+    border: 1px solid #ddd;
+    margin: 50px 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    justify-content: center;
+    gap: 10px;
+    
+}
+.tituloydescrip {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  flex-grow: 1; /* Permite que la descripción crezca y ocupe el espacio disponible */
+}
+
+main .containerservicios .articuloservicio p{
+    text-align: center;
+    font-family:"Nixie One", sistema-ui;
+    font-size: 1rem;
+    color: black;
+    font-weight: bold; 
+    margin: 20px 40px 40px 20px;
+}
+
+main .containerservicios .articuloservicio h2{
+    font-family:"Bebas Neue", sans-serif;
+    font-size: 2rem;
+}
+main section div .button{
+    display:block; /* Cambia a bloque para ocupar todo el ancho disponible */
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: "Nixie One", sistema-ui;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    letter-spacing: 5px;
+    margin-top: 20px; 
+}
+.button:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+/*---------------------------------------------------------------------------------------------------------------*/
+/*Estilos pagina BLOG*/
+main .containerblog .articulo img{
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: 0 auto;
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    margin-left: 10px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+main .containerblog{
+    width: 800px;
+    margin: 0 auto;
+    opacity: 0.6;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+main .containerblog:hover{
+    opacity:1;
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+main .containerblog .articulo{
+    display: flex; /* caja flexible para organizar los elementos hijos */
+    align-items: flex-start; /* Alinea los elementos hijos al inicio del eje transversal */
+    padding: 20px; /* Espacio interior alrededor del contenedor */
+    margin: 20px; /* Margen exterior del contenedor */
+    border-radius: 8px; /* Borde redondeado del contenedor */
+    background-color: #f9f9f9; /* Color de fondo del contenedor */
+    transition: box-shadow 0.3s ease;
+    margin: 1rem 0;      
+}
+main .containerblog .articulo h2{
+    font-family:"Bebas Neue", sans-serif;
+    font-size: 2rem;
+    text-align: left;
+    
+}
+main .containerblog .articulo p{
+    font-family:"Nixie One", sistema-ui;
+    font-size: 1rem;
+    color: black;
+    text-shadow: 3px 8px 5px rgb(0, 0, 0,);
+    font-weight: bold; 
+}
+/*------------------------------------------------------------------------------------------------------*/
+/*Estilo pagina reserva*/
+.horas{
+    display: flex;
+    justify-content: center; 
+    margin-top: 30px;        
+}
+/*----------------------------------------------------------------------------------------------------*/
+/*Estilo pagina contacto*/
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px;
+    gap: 50px;
+}
+
+.contact-container .contact-container .mapa {
+    flex: 3;
+    max-width: 900px;
+    height: 300px;
+    margin-left: 100px;
+}
+
+.info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family:"Nixie One", sistema-ui;
+}
+
+.infocontacto {
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8); /* Ejemplo de sombra suave */
+}
+.titulosinfo{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
