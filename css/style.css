@@ -216,39 +216,68 @@ main .bannerservicios {
     font-family: var(--fuente-primaria);
 }
 
-.containerservicios {
+.card-container {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    gap: 15px;
-}
+    gap: 20px; /* Elimina el espacio entre las tarjetas */
+    margin: 70px;
 
-.articuloservicio img {
-    width: 200px;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
-}
-
-.articuloservicio {
-    width: 30%;
+  }
+  
+.card {
+    flex: 1; /* Hace que todas las tarjetas ocupen el mismo espacio disponible */
+    margin: 0 5px; /* Opcional: Añade un pequeño margen lateral para separar ligeramente las tarjetas */
+    max-width: calc(33.333% - 10px); /* Ajusta el ancho de las tarjetas y considera el margen */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border: 1px solid var(--color-borde);
-    margin: 50px 0;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    gap: 10px;
-}
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.411);
+} 
+.card:hover{
+    transition: 2s;
+    scale: 1.1;
 
-.tituloydescrip {
+}
+  .card img {
+    width: 100%; /* Asegura que las imágenes ocupen el ancho completo de la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
+    justify-content: space-between;
+    padding: 15px; /* Añade un poco de padding interno a la tarjeta */
+    flex-grow: 1;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+  
+
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
 
 /* Estilos de la página del blog */
 .containerblog .articulo img {
