@@ -245,7 +245,7 @@ main .bannerservicios {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 15px; /* Añade un poco de padding interno a la tarjeta */
+    padding: 15px; /*padding interno a la tarjeta */
     flex-grow: 1;
   }
   
@@ -280,35 +280,38 @@ main .bannerservicios {
   
 
 /* Estilos de la página del blog */
-.containerblog .articulo img {
-    width: 100px;
-    height: auto;
-    margin: 0 20px 0 10px;
-    border-radius: 5px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-}
-
 .containerblog {
     width: 800px;
     margin: 0 auto;
-    opacity: 0.6;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+   
+    
+    display: grid; /* Configura el contenedor como una cuadrícula */
+    grid-template-columns: 1fr; /* Una columna */
+    
 }
 
-.containerblog:hover {
+.articulo {
+    margin: 50px 50px 20px 50px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 0.6;
+    display: flex;
+    align-items: flex-start;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.articulo:hover {
     opacity: 1;
     box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.5);
     transform: scale(1.1);
 }
 
-.articulo {
-    display: flex;
-    align-items: flex-start;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    transition: box-shadow 0.3s ease;
+.articulo img {
+    width: 100px;
+    height: auto;
+    margin: 0 20px 0 10px;
+    border-radius: 5px;
 }
 
 .articulo h2 {
@@ -318,11 +321,13 @@ main .bannerservicios {
 
 .articulo p {
     font-family: var(--fuente-primaria);
-    font-size: 1rem;
+    font-size: 15px !important;
     color: black;
     text-shadow: 3px 8px 5px rgba(0, 0, 0, 0.5);
     font-weight: bold;
 }
+
+
 
 /* Estilos de la página de reservas */
 .horas {
