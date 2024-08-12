@@ -1,0 +1,279 @@
+/* Estilos generales aquí */
+
+/* Media queries para pantallas pequeñas */
+@media only screen and (max-width: 500px) {
+  .titulocentro {
+    font-size: 4em;
+    margin: 0px 30px 10px 30px;
+    padding-top: 100px;
+  }
+
+  .subtitulocentro {
+    font-size: 2em;
+    margin: 10px 20px;
+  }
+
+  #botondeinicio {
+    margin: 50px 20px;
+    font-size: 2em;
+    line-height: 1;
+  }
+
+  .navbar-titulo {
+    font-size: 18px;
+  }
+
+  nav {
+    ul {
+      flex-direction: column;
+      align-items: center;
+
+      li {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  main {
+    background-position: right;
+
+  }
+
+  .logo {
+    a {
+      img {
+        left: 20px;
+      }
+    }
+  }
+
+  
+  .containerblog {
+    width: 100%;  // El contenedor ocupa el 100% del ancho de la pantalla
+    padding: 0;  // Añade padding para que el contenido no toque los bordes
+    align-items: center;
+    margin: 0;
+
+    .articulo {
+    
+        flex-direction: column;  // Apila los elementos verticalmente
+        align-items: center;  // Centra los elementos del artículo
+
+        img {
+            width: 100%;  // La imagen ocupa el ancho completo del contenedor
+            margin: 0 0 10px 0;  // Ajusta el margen para que la imagen tenga espacio por debajo
+        }
+
+        h2 {
+            text-align: center;  // Centra el texto del título
+        }
+
+        p {
+            text-align: center;  // Centra el texto del párrafo
+        }
+    }
+  }
+
+  .card-container {
+    flex-direction: column; /* Cambia la dirección del flexbox a columna */
+    align-items: center; /* Centra las tarjetas horizontalmente */
+  }
+
+  .card {
+    flex: 1 1 100%; /* Cada tarjeta ocupa el 100% del ancho del contenedor */
+    max-width: 100%; /* Limita el ancho máximo de cada tarjeta al 100% */
+    margin: 10px 0; /* Espaciado vertical entre tarjetas */
+  }
+ 
+
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+
+    .mapa {
+      margin-left: 0;
+    }
+  }
+
+  
+
+  .footer-content {
+    p {
+      font-size: 10px;
+    }
+  }
+  
+  .footer-images {
+    justify-content: center;
+    padding-right: 10px;
+  }
+
+
+}
+
+/* Media queries para pantallas medianas */
+@media only screen and (min-width: 501px) and (max-width: 960px) {
+  .titulocentro {
+    font-size: 6em;
+    margin: 30px 20px 10px 10px;
+    padding-top: 100px;
+  }
+
+  .subtitulocentro {
+    font-size: 3em;
+    margin: 10px 20px;
+  }
+
+  #botondeinicio {
+    font-size: 2em;
+    margin: 60px 20px;
+    padding: 20px;
+  }
+
+  nav {
+    ul {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  .logo {
+    a {
+      img {
+        left: 30px;
+      }
+    }
+  }
+
+  .footer-images {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+
+    .mapa {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+
+  .containerblog {
+    width: 100%;  // El contenedor ocupa el 100% del ancho de la pantalla
+    padding: 0;  // Añade padding para que el contenido no toque los bordes
+    align-items: center;
+    margin: 0;
+
+    .articulo {
+        
+        
+        flex-direction: column;  // Apila los elementos verticalmente
+        align-items: center;  // Centra los elementos del artículo
+
+        img {
+            width: 100%;  // La imagen ocupa el ancho completo del contenedor
+            margin: 0 0 10px 0;  // Ajusta el margen para que la imagen tenga espacio por debajo
+        }
+
+        h2 {
+            text-align: center;  // Centra el texto del título
+        }
+
+        p {
+            text-align: center;  // Centra el texto del párrafo
+        }
+    }
+  }
+
+  .card-container {
+    flex-direction: column; /* Cambia la dirección del flexbox a columna */
+    align-items: center; /* Centra las tarjetas horizontalmente */
+  }
+
+  .card {
+    flex: 1 1 100%; /* Cada tarjeta ocupa el 100% del ancho del contenedor */
+    max-width: 100%; /* Limita el ancho máximo de cada tarjeta al 100% */
+    margin: 10px 0; /* Espaciado vertical entre tarjetas */
+  }
+
+}
+
+/* Media queries para pantallas grandes */
+@media only screen and (min-width: 961px) {
+  .titulocentro {
+    font-size: 8em;
+    margin: 10px 50px 20px 50px;
+    padding-top: 150px;
+  }
+
+  .subtitulocentro {
+    font-size: 2.5em;
+    margin: 10px 50px 20px 50px;
+  }
+
+  #botondeinicio {
+    margin: 60px 50px;
+    font-size: 2em;
+  }
+
+  nav {
+    ul {
+      flex-direction: row;
+      justify-content: space-around;
+      font-size: 1em;
+    }
+  }
+
+  .logo {
+    a {
+      img {
+        width: 100px;
+        left: 50px;
+      }
+    }
+  }
+
+  .footer-images {
+    justify-content: center;
+    padding-right: 60px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .mapa {
+      margin-left: 0;
+      width: 70%;
+      height: 500px;
+    }
+  }
+
+  .info-container {
+    width: 25%;
+  }
+
+  .articuloservicio {
+    width: 20%;
+  }
+
+  .containerblog {
+    width: 1200px;
+  }
+
+  .articulo {
+    h2 {
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 1.5em;
+    }
+  }
+}

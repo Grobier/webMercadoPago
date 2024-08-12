@@ -1,0 +1,13 @@
+$color-primario: white;
+$color-secundario: grey;
+$color-fondo: rgba(0, 0, 0, 0.3);
+$color-borde: #ddd;
+$fuente-primaria: "Nixie One", system-ui;
+$fuente-secundaria: "Bebas Neue", sans-serif;
+$tamano-fuente-grande: 120px;
+$tamano-fuente-mediano: 45px;
+$tamano-fuente-pequeno: 30px;
+
+@mixin transition($property, $duration) {
+  transition: $property $duration;
+}

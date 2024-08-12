@@ -1,0 +1,28 @@
+body.paginadeinicio {
+    min-height: 100vh;
+  }
+  
+  .titulocentro {
+    color: whitesmoke;
+    font-size: $tamano-fuente-grande;
+    font-family: $fuente-secundaria;
+    line-height: 0.8;
+    letter-spacing: 0.5px;
+    padding-top: 50px;
+  
+    &:hover {
+      color: $color-primario;
+      @include transition(transform, 0.5s);
+    }
+  }
+  
+  .subtitulocentro {
+    font-size: $tamano-fuente-mediano;
+    font-family: $fuente-primaria;
+    text-shadow: 3px 8px 5px rgba(0, 0, 0, 0.5);
+  
+    &:hover {
+      color: $color-primario;
+    }
+  }
+  
