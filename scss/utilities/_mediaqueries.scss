@@ -2,22 +2,31 @@
 
 /* Media queries para pantallas pequeñas */
 @media only screen and (max-width: 500px) {
-  .titulocentro {
-    font-size: 4em;
-    margin: 0px 30px 10px 30px;
-    padding-top: 100px;
-  }
+  main{
+    .text-center{
+      
+      .titulocentro {
+        font-size: 4em;
+        margin: 0px 30px 10px 30px;
+        padding-top: 100px;
+      }
+    
+      .subtitulocentro {
+        font-size: 1.5em;
+        margin: 10px 20px;
+      }
+    
+      #botondeinicio {
+        margin: 50px 20px;
+        font-size: 2em;
+        line-height: 1;
+      }
+    }
 
-  .subtitulocentro {
-    font-size: 2em;
-    margin: 10px 20px;
   }
+  
 
-  #botondeinicio {
-    margin: 50px 20px;
-    font-size: 2em;
-    line-height: 1;
-  }
+
 
   .navbar-titulo {
     font-size: 18px;
@@ -47,30 +56,32 @@
     }
   }
 
+  main{
+
+    .containerblog {
+      width: 100%;  // El contenedor ocupa el 100% del ancho de la pantalla
+      padding: 0;  // Añade padding para que el contenido no toque los bordes
+      align-items: center;
+      margin: 0;
   
-  .containerblog {
-    width: 100%;  // El contenedor ocupa el 100% del ancho de la pantalla
-    padding: 0;  // Añade padding para que el contenido no toque los bordes
-    align-items: center;
-    margin: 0;
-
-    .articulo {
-    
-        flex-direction: column;  // Apila los elementos verticalmente
-        align-items: center;  // Centra los elementos del artículo
-
-        img {
-            width: 100%;  // La imagen ocupa el ancho completo del contenedor
-            margin: 0 0 10px 0;  // Ajusta el margen para que la imagen tenga espacio por debajo
-        }
-
-        h2 {
-            text-align: center;  // Centra el texto del título
-        }
-
-        p {
-            text-align: center;  // Centra el texto del párrafo
-        }
+      .articulo {
+      
+          flex-direction: column;  // Apila los elementos verticalmente
+          align-items: center;  // Centra los elementos del artículo
+  
+          img {
+              width: 100%;  // La imagen ocupa el ancho completo del contenedor
+              margin: 0 0 10px 0;  // Ajusta el margen para que la imagen tenga espacio por debajo
+          }
+  
+          h2 {
+              text-align: center;  // Centra el texto del título
+          }
+  
+          p {
+              text-align: center;  // Centra el texto del párrafo
+          }
+      }
     }
   }
 

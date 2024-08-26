@@ -1,0 +1,41 @@
+main{
+    .contact-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px;
+        gap: 80px;
+
+        .mapa{
+            flex: 3;
+            max-width: 900px;
+            height: 400px;
+            margin-left: 100px;
+        }
+
+        .info-container{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin: 50px;
+            gap: 50px;
+            font-family: "Nixie One", system-ui;
+            .infocontacto{
+                width: 100%;
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+
+                .titulosinfo{
+                    font-weight: bold;
+                    margin-bottom: 10px;
+
+                }
+
+            }
+
+        }
+    }
+
+}
