@@ -60,8 +60,7 @@ footer .footer-content .footer-images {
 
 main .bannerservicios {
   background: url("../imagenes/Banner web gimnasio duotono violeta.png") center/cover no-repeat;
-  min-height: 45vh;
-  margin-top: 30px;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,18 +231,19 @@ main .text-center #botondeinicio:hover {
 
 main .card-container {
   width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* Asegura que las tarjetas se distribuyan uniformemente */
   justify-content: center;
-  margin: 40px 0 40px 0;
-  gap: 10px;
+  margin: 40px auto;
+  gap: 20px;
 }
 main .card-container .card {
-  flex: 0 1 30%; /* Las tarjetas ocuparán el 30% del ancho del contenedor */
+  flex: 0 1 25%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.411); /* Sombra de la tarjeta */
   transition: transform 0.5s; /* Transición suave en transformaciones (hover, etc.) */
-  margin: 0 10px; /* Espacio lateral entre las tarjetas */
+  margin: 0 5px; /* Espacio lateral entre las tarjetas */
 }
 main .card-container .card .card-img-top {
   width: 100%;
@@ -261,7 +261,7 @@ main .card-container .card .card-body .card-title {
   margin-bottom: 10px;
 }
 main .card-container .card .card-body .card-text {
-  font-size: 1rem;
+  font-size: 13px;
   margin-bottom: 15px;
 }
 main .card-container .card .card-body .button2 {
@@ -459,13 +459,32 @@ main .contact-container .info-container .infocontacto .titulosinfo {
     text-align: center;
   }
   .card-container {
-    flex-direction: column; /* Cambia la dirección del flexbox a columna */
-    align-items: center; /* Centra las tarjetas horizontalmente */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
-  .card {
-    flex: 1 1 100%; /* Cada tarjeta ocupa el 100% del ancho del contenedor */
-    max-width: 100%; /* Limita el ancho máximo de cada tarjeta al 100% */
-    margin: 10px 0; /* Espaciado vertical entre tarjetas */
+  .card-container .card {
+    flex: 0 1 auto;
+    width: 90%;
+    margin: 10px 0;
+  }
+  .card-container .card-img-top {
+    width: 80%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+  .card-container .card-title {
+    font-size: 1rem;
+  }
+  .card-container .card-text {
+    font-size: 0.875rem;
+  }
+  .bannerservicios {
+    background-size: 80%; /* Reduce el ancho de la imagen a 80% del contenedor */
+    background-position: center top; /* Alinea la imagen con la parte superior */
+    min-height: 15vh;
   }
   .contact-container {
     flex-direction: column;

@@ -86,15 +86,39 @@
   }
 
   .card-container {
-    flex-direction: column; /* Cambia la dirección del flexbox a columna */
-    align-items: center; /* Centra las tarjetas horizontalmente */
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+
+    .card {
+        flex: 0 1 auto; 
+        width: 90%; 
+        margin: 10px 0; 
+    }
+    .card-img-top {
+      width: 80%; 
+      height: auto; 
+      max-height: 150px; 
+      object-fit:cover; 
+      margin: 0 auto; 
   }
 
-  .card {
-    flex: 1 1 100%; /* Cada tarjeta ocupa el 100% del ancho del contenedor */
-    max-width: 100%; /* Limita el ancho máximo de cada tarjeta al 100% */
-    margin: 10px 0; /* Espaciado vertical entre tarjetas */
+    .card-title {
+        font-size: 1rem; 
+    }
+
+    .card-text {
+        font-size: 0.875rem; 
+    }
   }
+
+
+  .bannerservicios {
+    background-size: 80%; /* Reduce el ancho de la imagen a 80% del contenedor */
+    background-position: center top; /* Alinea la imagen con la parte superior */
+    min-height: 15vh;  
+  }
+
  
 
 

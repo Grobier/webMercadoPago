@@ -1,19 +1,20 @@
-main{
+main{ 
     
     .card-container{
         width: 100%;
+        max-width: 1200px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between; /* Asegura que las tarjetas se distribuyan uniformemente */
         justify-content: center;
-        margin: 40px 0 40px 0;
-        gap: 10px;
+        margin: 40px auto;
+        gap: 20px;
 
         .card{
-            flex: 0 1 30%; /* Las tarjetas ocuparán el 30% del ancho del contenedor */
+            flex: 0 1 25%; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.411); /* Sombra de la tarjeta */
             transition: transform 0.5s; /* Transición suave en transformaciones (hover, etc.) */
-            margin: 0 10px; /* Espacio lateral entre las tarjetas */
+            margin: 0 5px; /* Espacio lateral entre las tarjetas */
             
             .card-img-top{
                 width: 100%;
@@ -32,7 +33,7 @@ main{
                 }
 
                 .card-text{
-                    font-size: 1rem;
+                    font-size: 13px;
                     margin-bottom: 15px;    
                 }
                 .button2{

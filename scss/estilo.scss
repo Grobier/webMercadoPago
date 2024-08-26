@@ -3,20 +3,19 @@
 @import "./base/reset";
 @import "./base/body";
 
-//layout y estrucutra
+//
 @import "./layout/header";
 @import "./layout/footer";
 @import "./components/banner";
 
-//navbar
+//
 @import "./components/navbar.scss";
 
-//pages
+//
 @import "./page/home";
 @import "./page/servicios";
 @import "./page/blog.scss";
 @import "./page/contacto";
 @import "./page/reserva";
 
-//mediaqueries
 @import "./utilities/mediaqueries";
