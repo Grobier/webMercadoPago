@@ -6,19 +6,21 @@
     .text-center{
       
       .titulocentro {
-        font-size: 4em;
+        font-size: 3em;
         margin: 0px 30px 10px 30px;
-        padding-top: 100px;
+        padding: 0;
       }
     
       .subtitulocentro {
         font-size: 1.5em;
         margin: 10px 20px;
+        .text-container {
+          font-size: 22px;
       }
     
       #botondeinicio {
         margin: 50px 20px;
-        font-size: 2em;
+        font-size: 16px;
         line-height: 1;
       }
     }
@@ -152,7 +154,7 @@
   .titulocentro {
     font-size: 6em;
     margin: 30px 20px 10px 10px;
-    padding-top: 100px;
+    
   }
 
   .subtitulocentro {
@@ -311,4 +313,5 @@
       font-size: 1.5em;
     }
   }
+ }
 }

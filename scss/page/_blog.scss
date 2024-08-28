@@ -1,44 +1,57 @@
-main{
-    .containerblog{
-        width: 800px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 1fr;
-        .articulo{
-            margin: 20px 50px 20px 50px;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            transition: opacity 0.4s ease;
-            transition: transform 0.4s ease;
-            opacity: 0.6;
-            display: flex;
-            align-items: flex-start;
-            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-            &:hover {
-                opacity: 1;
-                box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.5);
-                transform: scale(1.1);
-            }
-            img{
-                width: 100px;
-                height: auto;
-                margin: 0 20px 0 10px;
-                border-radius: 5px;
-            }
-            .tituloydescrip{
-                h2{
-                    font-family: "Bebas Neue", sans-serif;
-                    font-size: 2rem;
-                }
-                p{
-                    font-family: "Nixie One", system-ui;
-                    font-size: 15px;
-                    color: black;
-                    font-weight: bold;
-                }
-            }
+main {
+    .containerblog {
+      width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+  
+      .articulo {
+        margin: 20px 50px;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        opacity: 0.6;
+        display: flex;
+        align-items: flex-start;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  
+        &:hover {
+          opacity: 1;
+          box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.5);
+          transform: scale(1.1);
         }
-
+  
+        a.articulo-link {
+          display: flex;
+          flex-direction: row;
+          text-decoration: none;
+          color: inherit;
+          flex: 1;
+          align-items: flex-start;
+        }
+  
+        img {
+          width: 100px;
+          height: auto;
+          margin: 0 20px 0 10px;
+          border-radius: 5px;
+        }
+  
+        .tituloydescrip {
+          h2 {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 2rem;
+          }
+  
+          p {
+            font-family: "Nixie One", system-ui;
+            font-size: 15px;
+            color: black;
+            font-weight: bold;
+          }
+        }
+      }
     }
-}
+  }
+  
