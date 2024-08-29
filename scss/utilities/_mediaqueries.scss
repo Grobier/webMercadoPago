@@ -3,6 +3,7 @@
 /* Media queries para pantallas pequeñas */
 @media only screen and (max-width: 500px) {
   main{
+    background-position: right;
     .text-center{
       
       .titulocentro {
@@ -16,23 +17,20 @@
         margin: 10px 20px;
         .text-container {
           font-size: 22px;
-      }
+        }
     
-      #botondeinicio {
+       #botondeinicio {
         margin: 50px 20px;
         font-size: 16px;
         line-height: 1;
+        }
       }
+
     }
 
-  }
-  
-
-
-
-  .navbar-titulo {
-    font-size: 18px;
-  }
+    .navbar-titulo {
+      font-size: 18px;
+     }
 
   nav {
     ul {
@@ -45,11 +43,6 @@
     }
   }
 
-  main {
-    background-position: right;
-
-  }
-
   .logo {
     a {
       img {
@@ -58,34 +51,58 @@
     }
   }
 
-  main{
+  .containerblog {
+    width: 70%; // Ajuste para la responsividad
+    margin: 0 auto; // Centra el contenedor
 
-    .containerblog {
-      width: 100%;  // El contenedor ocupa el 100% del ancho de la pantalla
-      padding: 0;  // Añade padding para que el contenido no toque los bordes
-      align-items: center;
-      margin: 0;
-  
-      .articulo {
-      
-          flex-direction: column;  // Apila los elementos verticalmente
-          align-items: center;  // Centra los elementos del artículo
-  
-          img {
-              width: 100%;  // La imagen ocupa el ancho completo del contenedor
-              margin: 0 0 10px 0;  // Ajusta el margen para que la imagen tenga espacio por debajo
-          }
-  
-          h2 {
-              text-align: center;  // Centra el texto del título
-          }
-  
-          p {
-              text-align: center;  // Centra el texto del párrafo
-          }
+    .articulo {
+      display: flex;
+      flex-direction: column; // Asegura que los elementos se apilen verticalmente
+      align-items: center; // Centra los elementos en la columna
+      margin: 10px 0;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      opacity: 0.6;
+      width: 100%; // Ocupa todo el ancho disponible
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+
+      &:hover {
+        opacity: 1;
+        box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.5);
+        transform: scale(1.1);
+      }
+      a.articulo-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+      }
+
+      img {
+        width: 60%; // La imagen ocupa el 80% del ancho del contenedor
+        margin: 10px 0; // Ajusta el margen para espacio alrededor
+        border-radius: 5px;
+        
+      }
+
+      h3 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.5rem;
+        text-align: center; // Centra el texto del título
+        margin: 10px 0; // Añade margen para separación visual
+      }
+
+      p {
+        font-family: "Nixie One", system-ui;
+        font-size: 14px;
+        text-align: center; // Centra el texto del párrafo
+        margin: 10px 0; // Añade margen para separación visual
       }
     }
   }
+  
 
   .card-container {
     flex-direction: column; 
@@ -116,7 +133,6 @@
 
 
   .bannerservicios {
-    background-size: 80%; /* Reduce el ancho de la imagen a 80% del contenedor */
     background-position: center top; /* Alinea la imagen con la parte superior */
     min-height: 15vh;  
   }
@@ -130,14 +146,14 @@
 
     .mapa {
       margin-left: 0;
+      width: 70%;
+      height: 500px
     }
   }
 
-  
-
   .footer-content {
     p {
-      font-size: 10px;
+      font-size: px;
     }
   }
   
@@ -145,95 +161,149 @@
     justify-content: center;
     padding-right: 10px;
   }
-
-
-}
+ }
+} 
 
 /* Media queries para pantallas medianas */
 @media only screen and (min-width: 501px) and (max-width: 960px) {
-  .titulocentro {
-    font-size: 6em;
-    margin: 30px 20px 10px 10px;
-    
-  }
 
-  .subtitulocentro {
-    font-size: 3em;
-    margin: 10px 20px;
-  }
-
-  #botondeinicio {
-    font-size: 2em;
-    margin: 60px 20px;
-    padding: 20px;
-  }
-
-  nav {
-    ul {
-      flex-direction: row;
-      justify-content: space-around;
+ main{
+  .text-center{
+      
+    .titulocentro {
+      font-size: 3em;
+      margin: 0px 30px 10px 30px;
+      padding: 0;
     }
-  }
+  
+    .subtitulocentro {
+      font-size: 1.5em;
+      margin: 10px 20px;
+      .text-container {
+        font-size: 22px;
+      }
+  
+     #botondeinicio {
+      margin: 50px 20px;
+      font-size: 16px;
+      line-height: 1;
+      }
+    }
 
-  .logo {
-    a {
-      img {
-        left: 30px;
+  }
+ 
+   nav {
+     ul {
+       flex-direction: row;
+       justify-content: space-around;
+      }
+    }
+ 
+   .logo {
+     a {
+       img {
+         left: 30px;
+        }
+      }
+    }
+
+    .containerblog {
+      width: 70%; // Ajuste para la responsividad
+      margin: 0 auto; // Centra el contenedor
+  
+      .articulo {
+        display: flex;
+        flex-direction: column; // Asegura que los elementos se apilen verticalmente
+        align-items: center; // Centra los elementos en la columna
+        margin: 10px 0;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        opacity: 0.6;
+        width: 100%; // Ocupa todo el ancho disponible
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  
+        &:hover {
+          opacity: 1;
+          box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.5);
+          transform: scale(1.1);
+        }
+        a.articulo-link {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          
+        }
+  
+        img {
+          width: 60%; // La imagen ocupa el 80% del ancho del contenedor
+          margin: 10px 0; // Ajusta el margen para espacio alrededor
+          border-radius: 5px;
+          
+        }
+  
+        h3 {
+          font-family: "Bebas Neue", sans-serif;
+          font-size: 1.5rem;
+          text-align: center; // Centra el texto del título
+          margin: 10px 0; // Añade margen para separación visual
+        }
+  
+        p {
+          font-family: "Nixie One", system-ui;
+          font-size: 14px;
+          text-align: center; // Centra el texto del párrafo
+          margin: 10px 0; // Añade margen para separación visual
+        }
+      }
+    }
+
+
+ 
+   .footer-images {
+     justify-content: center;
+     padding-right: 0;
+    }
+ 
+   .contact-container {
+     flex-direction: column;
+     align-items: center;
+ 
+     .mapa {
+      margin-left: 0;
+      width: 70%;
+      height: 500px;
       }
     }
   }
-
-  .footer-images {
-    justify-content: center;
-    padding-right: 0;
-  }
-
-  .contact-container {
-    flex-direction: column;
-    align-items: center;
-
-    .mapa {
-      margin-left: 0;
-      width: 100%;
-    }
-  }
-
-  .containerblog {
-    width: 100%;  // El contenedor ocupa el 100% del ancho de la pantalla
-    padding: 0;  // Añade padding para que el contenido no toque los bordes
-    align-items: center;
-    margin: 0;
-
-    .articulo {
-        
-        
-        flex-direction: column;  // Apila los elementos verticalmente
-        align-items: center;  // Centra los elementos del artículo
-
-        img {
-            width: 100%;  // La imagen ocupa el ancho completo del contenedor
-            margin: 0 0 10px 0;  // Ajusta el margen para que la imagen tenga espacio por debajo
-        }
-
-        h2 {
-            text-align: center;  // Centra el texto del título
-        }
-
-        p {
-            text-align: center;  // Centra el texto del párrafo
-        }
-    }
-  }
+  
 
   .card-container {
-    flex-direction: column; /* Cambia la dirección del flexbox a columna */
-    align-items: center; /* Centra las tarjetas horizontalmente */
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+
+    .card {
+        flex: 0 1 auto; 
+        width: 90%; 
+        margin: 10px 0; 
+    }
+    .card-img-top {
+      width: 80%; 
+      height: auto; 
+      max-height: 150px; 
+      object-fit:cover; 
+      margin: 0 auto; 
   }
 
-  .card {
-    flex: 1 1 100%; /* Cada tarjeta ocupa el 100% del ancho del contenedor */
-    max-width: 100%; /* Limita el ancho máximo de cada tarjeta al 100% */
-    margin: 10px 0; /* Espaciado vertical entre tarjetas */
+    .card-title {
+        font-size: 1rem; 
+    }
+
+    .card-text {
+        font-size: 0.875rem; 
+    }
   }
 
 }
@@ -310,8 +380,8 @@
     }
 
     p {
-      font-size: 1.5em;
+      font-size: 1.4em;
     }
   }
- }
+ 
 }

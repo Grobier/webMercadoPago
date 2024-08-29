@@ -95,4 +95,41 @@ main {
             background-color: whitesmoke;
         }
     }
+
+    .whatsapp-float {
+        position: fixed;
+        width: 80px;
+        height: 80px;
+        bottom: 30px;
+        right: 30px;
+        color: #FFF;
+        border-radius: 50px;
+        z-index: 1000;
+        
+
+    
+        img {
+            margin: 20px;
+            width: 80px; // Ajusta el tamaño del ícono de WhatsApp
+            height: 80px;
+            transition: transform 0.5s;
+        }
+    
+        &:hover {
+            animation: bounce 0.5s;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    }
+    
 }
