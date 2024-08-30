@@ -96,12 +96,12 @@ main {
         }
     }
 
-    .whatsapp-float {
+    a.float-whatsapp {
         position: fixed;
         width: 80px;
         height: 80px;
-        bottom: 30px;
-        right: 30px;
+        bottom: 20px;
+        right: 20px;
         color: #FFF;
         border-radius: 50px;
         z-index: 1000;
@@ -109,7 +109,7 @@ main {
 
     
         img {
-            margin: 20px;
+            margin: 0px;
             width: 80px; // Ajusta el tamaño del ícono de WhatsApp
             height: 80px;
             transition: transform 0.5s;

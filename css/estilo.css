@@ -216,23 +216,23 @@ main .text-center #botondeinicio:hover {
   color: grey;
   background-color: whitesmoke;
 }
-main .whatsapp-float {
+main a.float-whatsapp {
   position: fixed;
   width: 80px;
   height: 80px;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
   color: #FFF;
   border-radius: 50px;
   z-index: 1000;
 }
-main .whatsapp-float img {
-  margin: 20px;
+main a.float-whatsapp img {
+  margin: 0px;
   width: 80px;
   height: 80px;
   transition: transform 0.5s;
 }
-main .whatsapp-float:hover {
+main a.float-whatsapp:hover {
   animation: bounce 0.5s;
 }
 @keyframes bounce {
