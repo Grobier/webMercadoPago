@@ -355,7 +355,6 @@ main .containerblog .articulo {
   padding: 20px;
   border-radius: 8px;
   background-color: #f9f9f9;
-  transform: translateY(50px);
   transition: opacity 0.4s ease, transform 0.4s ease;
   opacity: 0.6;
   display: flex;
@@ -364,7 +363,6 @@ main .containerblog .articulo {
 }
 main .containerblog .articulo:hover {
   opacity: 1;
-  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.5);
   transform: scale(1.1);
 }
 main .containerblog .articulo a.articulo-link {
@@ -475,7 +473,7 @@ main .contact-container .info-container .infocontacto .titulosinfo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px 0;
+    margin: 10px;
     padding: 20px;
     border-radius: 8px;
     background-color: #f9f9f9;
