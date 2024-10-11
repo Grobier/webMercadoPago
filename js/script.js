@@ -3,33 +3,79 @@ document.addEventListener('DOMContentLoaded', () => {
     const listaCarrito = document.getElementById('lista-carrito');
     const btnPagar = document.getElementById('btn-pagar');
     const carritoIcono = document.getElementById('carrito-icono');
-    const contadorCarrito = document.getElementById('contador-carrito');
     const carritoContainer = document.getElementById('carrito-container');
+    const btnCerrarCarrito = document.getElementById('btn-cerrar-carrito');
+    const overlay = document.getElementById('overlay');
+    const contadorCarrito = document.getElementById('contador-carrito');
+    const valorTotal = document.getElementById('valor-total');
+    const codigoDescuentoInput = document.getElementById('codigo-descuento');
+    const btnAplicarDescuento = document.getElementById('btn-aplicar-descuento');
 
-    botones.forEach((boton, index) => {
+    const precios = {
+        Rehabilitacion: 34000,
+        Entrenamiento: 18000,
+        Recovery: 42000,
+    };
+    const codigoDescuentoValido = "DESCUENTO15";//CODIGO DE DESCUENTO
+    let descuentoAplicado = false;
+
+    botones.forEach(boton => {
         boton.addEventListener('click', (event) => {
             event.preventDefault();
-            const servicio = obtenerServicio(index);
-            agregarServicioAlCarrito(servicio);
-            mostrarCarrito();
-            actualizarContador();
+            const servicio = boton.dataset.servicio;
+            const sesiones = obtenerSesiones(servicio);
+            if (sesiones && sesiones > 0) {
+                agregarServicioAlCarrito(servicio, sesiones);
+                mostrarCarrito();
+                actualizarContador();
+            } else {
+                alert('Por favor selecciona una cantidad válida de sesiones.');
+            }
         });
     });
 
-    function obtenerServicio(index) {
-        const servicios = ['REHABILITACIÓN', 'ENTRENAMIENTO PERSONALIZADO', 'RECOVERY'];
-        return servicios[index];
+    function obtenerSesiones(servicio) {
+        if (servicio === 'Rehabilitacion') {
+            return document.getElementById('sesiones-Rehabilitacion').value;
+        } else if (servicio === 'Entrenamiento') {
+            return document.getElementById('sesiones-Entrenamiento').value;
+        } else if (servicio === 'Recovery') {
+            return document.getElementById('sesiones-Recovery').value;
+        }
+        return null;
     }
 
-    function agregarServicioAlCarrito(servicio) {
+    function agregarServicioAlCarrito(servicio, sesiones) {
         let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        carrito.push(servicio);
+        carrito.push({ servicio, sesiones });
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 
     function mostrarCarrito() {
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        listaCarrito.innerHTML = carrito.map(item => `<li>${item}</li>`).join('');
+        let total = 0;
+        listaCarrito.innerHTML = carrito
+            .map((item, index) => {
+                const precioUnitario = precios[item.servicio];
+                const precioTotal = precioUnitario * item.sesiones;
+                total += precioTotal;
+                return `
+                    <li>
+                        ${item.servicio} - ${item.sesiones} sesiones a $${precioUnitario.toLocaleString('es-CL')} c/u:
+                        <strong>$${precioTotal.toLocaleString('es-CL')}</strong>
+                        <button class="btn-eliminar" data-index="${index}">Eliminar</button>
+                    </li>
+                `;
+            })
+            .join('');
+
+        if (descuentoAplicado) {
+            total = aplicarDescuento(total);
+        }
+
+        valorTotal.textContent = `Total a pagar: $${total.toLocaleString('es-CL')}`;
+        carritoContainer.style.display = 'block';
+        overlay.style.display = 'block'; // Muestra el overlay
     }
 
     function actualizarContador() {
@@ -37,22 +83,53 @@ document.addEventListener('DOMContentLoaded', () => {
         contadorCarrito.textContent = carrito.length;
     }
 
-    // Mostrar u ocultar el carrito cuando se hace clic en el icono del carrito
-    carritoIcono.addEventListener('click', () => {
-        carritoContainer.style.display = carritoContainer.style.display === 'none' ? 'block' : 'none';
+    function aplicarDescuento(total) {
+        return total * 0.85; // Aplica un descuento del 15%
+    }
+
+    btnAplicarDescuento.addEventListener('click', () => {
+        const codigo = codigoDescuentoInput.value.trim();
+        if (codigo === codigoDescuentoValido) {
+            descuentoAplicado = true;
+            alert('¡Descuento aplicado con éxito!');
+            mostrarCarrito(); // Actualiza el carrito para reflejar el descuento
+        } else {
+            alert('Código de descuento inválido.');
+        }
     });
 
-    // Llamar a la función para mostrar el carrito y actualizar el contador al cargar la página
-    mostrarCarrito();
-    actualizarContador();
+    carritoIcono.addEventListener('click', () => {
+        mostrarCarrito();
+    });
+
+    btnCerrarCarrito.addEventListener('click', () => {
+        carritoContainer.style.display = 'none';
+        overlay.style.display = 'none'; // Oculta el overlay
+    });
+
+    listaCarrito.addEventListener('click', (event) => {
+        if (event.target.classList.contains('btn-eliminar')) {
+            const index = event.target.dataset.index;
+            eliminarServicioDelCarrito(index);
+            mostrarCarrito();
+            actualizarContador();
+        }
+    });
+
+    function eliminarServicioDelCarrito(index) {
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.splice(index, 1);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
 
     btnPagar.addEventListener('click', () => {
-        if (JSON.parse(localStorage.getItem('carrito')).length > 0) {
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        if (carrito.length > 0) {
             alert('Redirigiendo a la página de pago...');
-            // Aquí podrías redirigir a la página de pago, por ejemplo:
-            // window.location.href = 'pago.html';
         } else {
             alert('El carrito está vacío. Agrega servicios antes de continuar.');
         }
     });
+
+    actualizarContador();
 });

@@ -282,8 +282,17 @@ main .card-container .card .card-body .card-text {
   font-size: 13px;
   margin-bottom: 15px;
 }
+main .card-container .card .card-body input[type=number] {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
 main .card-container .card .card-body .button2 {
   display: inline-block;
+  margin: 0 auto;
   transition: all 0.2s ease-in;
   position: relative;
   overflow: hidden;
@@ -346,7 +355,7 @@ main .card-container .card .card-body .button2:hover:after {
 main .carrito-icono {
   position: fixed;
   top: 50%;
-  right: 1%;
+  right: 20px;
   transform: translateY(-50%);
   background-color: rgba(38, 113, 226, 0.7058823529);
   color: white;
@@ -356,8 +365,10 @@ main .carrito-icono {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
   z-index: 1100;
 }
-main .carrito-icono .fas {
-  font-size: 1.5rem;
+main .carrito-icono .icono-carrito {
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 main .carrito-icono .contador {
   background-color: #e74c3c;
@@ -368,45 +379,142 @@ main .carrito-icono .contador {
   top: -5px;
   right: -5px;
 }
-main .carrito-container {
+main .overlay {
   position: fixed;
-  top: 70px;
-  right: 20px;
-  width: 300px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1500;
+  display: none;
+}
+main .carrito-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
   background: #f8f9fa;
   border: 1px solid #ddd;
   padding: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  z-index: 1000;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 2000;
   display: none;
 }
-main .carrito-container h3 {
+main .carrito-popup h3 {
   margin-top: 0;
   font-size: 18px;
   margin-bottom: 10px;
 }
-main .carrito-container #lista-carrito {
+main .carrito-popup hr {
+  margin: 10px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+main .carrito-popup .descuento-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+main .carrito-popup .descuento-container input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+main .carrito-popup .descuento-container button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+main .carrito-popup .descuento-container button:hover {
+  background-color: #5a6268;
+}
+main .carrito-popup #lista-carrito {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-main .carrito-container #lista-carrito li {
+main .carrito-popup #lista-carrito li {
   margin-bottom: 5px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-main .carrito-container #btn-pagar {
+main .carrito-popup #lista-carrito li .btn-eliminar {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+main .carrito-popup #lista-carrito li .btn-eliminar:hover {
+  background-color: #c0392b;
+}
+main .carrito-popup .total {
+  text-align: right;
+  font-weight: bold;
+}
+main .carrito-popup #btn-pagar,
+main .carrito-popup #btn-cerrar-carrito {
   width: 100%;
   margin-top: 10px;
-  background-color: #28a745;
+  background-color: #2f21f1;
   color: #fff;
   border: none;
   border-radius: 4px;
   padding: 10px;
 }
-main .carrito-container #btn-pagar:hover {
-  background-color: #218838;
+main .carrito-popup #btn-pagar:hover,
+main .carrito-popup #btn-cerrar-carrito:hover {
+  background-color: #1d12b8;
+}
+main .carrito-popup #btn-cerrar-carrito {
+  background-color: #6c757d;
+}
+main .carrito-popup #btn-cerrar-carrito:hover {
+  background-color: #5a6268;
+}
+main .servicio {
+  margin-bottom: 20px;
+  text-align: center;
+}
+main .servicio h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+main .servicio input[type=number] {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+main .servicio .button2 {
+  display: inline-block;
+  background-color: #0b4cad;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 auto;
+}
+main .servicio .button2:hover {
+  background-color: #093a72;
 }
 
 main .containerblog {

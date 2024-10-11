@@ -160,10 +160,15 @@
               ofrecemos un plan de tratamiento personalizado adaptado a tus
               necesidades y objetivos específicos.
             </p>
-            <a href="../html/reserva.html" class="btn btn-primary button2 carrito"
-              >Agregar al carrito</a
-            >
+            
+          <div class="servicio">
+            <input type="number" id="sesiones-Rehabilitacion" min="1" placeholder="Número de sesiones">
+            <a href="../html/reserva.html" class="btn btn-primary button2 carrito" data-servicio="Rehabilitacion">
+              Agregar al carrito
+            </a>
+          </div>  
           </div>
+          
         </div>
         <div class="card">
           <img
@@ -181,9 +186,12 @@
               y efectiva. ¡Comienza tu viaje hacia una mejor versión de ti mismo
               hoy!
             </p>
-            <a href="../html/reserva.html" class="btn btn-primary button2 carrito"
-              >Agregar al carrito</a
-            >
+          <div class="servicio">
+              <input type="number" id="sesiones-Entrenamiento" min="1" placeholder="Número de sesiones">
+              <a href="../html/reserva.html" class="btn btn-primary button2 carrito" data-servicio="Entrenamiento">
+                Agregar al carrito
+              </a>
+          </div>  
           </div>
         </div>
         <div class="card">
@@ -199,10 +207,12 @@
               una recuperación óptima después del ejercicio o una lesión.
               ¡Redescubre el bienestar y la energía con nosotros!
             </p>
-            <a href="../html/reserva.html" class="btn btn-primary button2 carrito"
-              >Agregar al carrito</a
-            >
-          </div>
+          <div class="servicio">
+              <input type="number" id="sesiones-Recovery" min="1" placeholder="Número de sesiones">
+              <a href="../html/reserva.html" class="btn btn-primary button2 carrito" data-servicio="Recovery">
+                Agregar al carrito
+              </a>
+          </div> 
         </div>
       </div>
       <!-- Ícono del Carrito con Contador usando una imagen personalizada -->
@@ -210,15 +220,21 @@
         <img src="../imagenes/shopping-cart-2-fill.png" alt="Carrito de compras" class="icono-carrito">
         <span id="contador-carrito" class="contador">0</span>
       </div>
-
+      <!-- Overlay para el efecto de fondo nublado -->
+      <div class="overlay" id="overlay"></div>
 
       <!-- Contenedor para mostrar el carrito de compras -->
-      <div class="carrito-container" id="carrito-container">
+      <div class="carrito-popup" id="carrito-container">
         <h3>Carrito de Compras</h3>
-        <ul id="lista-carrito">
-          <!-- Los servicios agregados aparecerán aquí -->
-        </ul>
-        <button id="btn-pagar" class="btn btn-success">Iniciar Pago</button>
+        <ul id="lista-carrito"></ul>
+        <hr>
+        <div class="descuento-container">
+          <input type="text" id="codigo-descuento" placeholder="Código de descuento">
+          <button id="btn-aplicar-descuento" class="btn btn-secondary">Aplicar</button>
+        </div>
+        <p id="valor-total">Total a pagar: $0</p>
+        <button id="btn-pagar" class="btn btn-success">Ir a Pagar</button>
+        <button id="btn-cerrar-carrito" class="btn btn-secondary">Seguir comprando</button>
       </div>
 
     </main>
