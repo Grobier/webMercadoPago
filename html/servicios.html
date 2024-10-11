@@ -160,8 +160,8 @@
               ofrecemos un plan de tratamiento personalizado adaptado a tus
               necesidades y objetivos específicos.
             </p>
-            <a href="../html/reserva.html" class="btn btn-primary button2"
-              >Evaluación Gratis</a
+            <a href="../html/reserva.html" class="btn btn-primary button2 carrito"
+              >Agregar al carrito</a
             >
           </div>
         </div>
@@ -181,8 +181,8 @@
               y efectiva. ¡Comienza tu viaje hacia una mejor versión de ti mismo
               hoy!
             </p>
-            <a href="../html/reserva.html" class="btn btn-primary button2"
-              >Evaluación Gratis</a
+            <a href="../html/reserva.html" class="btn btn-primary button2 carrito"
+              >Agregar al carrito</a
             >
           </div>
         </div>
@@ -199,12 +199,28 @@
               una recuperación óptima después del ejercicio o una lesión.
               ¡Redescubre el bienestar y la energía con nosotros!
             </p>
-            <a href="../html/reserva.html" class="btn btn-primary button2"
-              >Evaluación Gratis</a
+            <a href="../html/reserva.html" class="btn btn-primary button2 carrito"
+              >Agregar al carrito</a
             >
           </div>
         </div>
       </div>
+      <!-- Ícono del Carrito con Contador usando una imagen personalizada -->
+      <div class="carrito-icono" id="carrito-icono">
+        <img src="../imagenes/shopping-cart-2-fill.png" alt="Carrito de compras" class="icono-carrito">
+        <span id="contador-carrito" class="contador">0</span>
+      </div>
+
+
+      <!-- Contenedor para mostrar el carrito de compras -->
+      <div class="carrito-container" id="carrito-container">
+        <h3>Carrito de Compras</h3>
+        <ul id="lista-carrito">
+          <!-- Los servicios agregados aparecerán aquí -->
+        </ul>
+        <button id="btn-pagar" class="btn btn-success">Iniciar Pago</button>
+      </div>
+
     </main>
     <footer>
       <div class="footer-content">
@@ -226,6 +242,8 @@
     <!--animacion scroll-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <!--script carrtio -->
+    <script src="../js/script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
