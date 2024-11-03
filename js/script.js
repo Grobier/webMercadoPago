@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Entrenamiento: 18000,
         Recovery: 42000,
     };
-    const codigoDescuentoValido = "DESCUENTO15";//CODIGO DE DESCUENTO
+    const codigoDescuentoValido = "DESCUENTO15"; // Código de descuento
     let descuentoAplicado = false;
 
     botones.forEach(boton => {
@@ -28,6 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 agregarServicioAlCarrito(servicio, sesiones);
                 mostrarCarrito();
                 actualizarContador();
+
+                Toastify({
+                    text: "Producto agregado exitosamente",
+                    duration: 3000,
+                    gravity: "bottom", // `top` or `bottom`
+                    position: "left", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                    background: "#0b4cad",
+                    },
+                    onClick: function(){} // Callback after click
+                }).showToast();
+            
             } else {
                 alert('Por favor selecciona una cantidad válida de sesiones.');
             }
@@ -47,7 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function agregarServicioAlCarrito(servicio, sesiones) {
         let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        carrito.push({ servicio, sesiones });
+        const itemExistente = carrito.find(item => item.servicio === servicio);
+
+        if (itemExistente) {
+            itemExistente.sesiones = parseInt(itemExistente.sesiones) + parseInt(sesiones);
+        } else {
+            carrito.push({ servicio, sesiones: parseInt(sesiones) });
+        }
+
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 
@@ -124,12 +144,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnPagar.addEventListener('click', () => {
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        let total = 0;
+    
         if (carrito.length > 0) {
-            alert('Redirigiendo a la página de pago...');
+            // Calcula el total considerando el descuento si está aplicado
+            carrito.forEach(item => {
+                const precioUnitario = precios[item.servicio];
+                const subtotal = precioUnitario * item.sesiones;
+                total += subtotal;
+            });
+    
+            if (descuentoAplicado) {
+                total = aplicarDescuento(total);
+            }
+    
+            // Crea la estructura de los items para enviar al backend
+            const items = carrito.map(item => ({
+                title: item.servicio,
+                quantity: item.sesiones,
+                unit_price: descuentoAplicado ? (precios[item.servicio] * 0.85) : precios[item.servicio]
+            }));
+    
+            // Envía solicitud al backend para crear la preferencia
+            fetch('http://localhost:3000/crear_preferencia', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ items }) // Enviamos la lista de productos al backend
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.init_point) {
+                    // Redirigir al usuario al flujo de pago de Mercado Pago
+                    window.location.href = data.init_point;
+                } else {
+                    console.error("Error: No se recibió el punto de inicio de Mercado Pago.");
+                }
+            })
+            .catch(error => console.error('Error al crear la preferencia:', error));
         } else {
             alert('El carrito está vacío. Agrega servicios antes de continuar.');
         }
-    });
-
+    });    
     actualizarContador();
 });

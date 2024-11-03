@@ -7,5 +7,14 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mercadopago": "^1.5.10",
+    "react-toastify": "^10.0.6",
+    "sweetalert2": "^11.14.4",
+    "toastify-js": "^1.12.0"
+  }
 }

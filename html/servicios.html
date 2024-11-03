@@ -39,6 +39,8 @@
     <!--Animacion scroll-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <!-- Toastify -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!--enlace a CSS-->
     <link rel="stylesheet" href="../css/estilo.css" />
 
@@ -236,7 +238,7 @@
         <button id="btn-pagar" class="btn btn-success">Ir a Pagar</button>
         <button id="btn-cerrar-carrito" class="btn btn-secondary">Seguir comprando</button>
       </div>
-
+      
     </main>
     <footer>
       <div class="footer-content">
@@ -254,13 +256,21 @@
         </div>
       </div>
     </footer>
-    <!-- MercadoPago -->
+    <!-- Alerta Sweet -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- SDK MercadoPago.js -->
     <script src="https://sdk.mercadopago.com/js/v2"></script>
-<script>
-    const mp = new MercadoPago('APP_USR-4745b363-d4ed-4d13-8693-3a288b9787fd', {
-        locale: 'es-CL' // Cambiar a 'es-CL' para Chile
-    });
-</script>
+
+    <script>
+    // Inicialización del SDK de Mercado Pago
+    const mp = new MercadoPago('APP_USR-4600f39e-2cdf-490a-b571-319b3f6faa6f'); // Reemplaza con tu clave pública
+    const bricksBuilder = mp.bricks();
+    </script>
+    
+    <!-- Toastify -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
     <!--animacion scroll-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
