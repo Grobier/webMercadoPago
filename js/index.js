@@ -39,7 +39,11 @@ app.post('/crear_preferencia', async (req, res) => {
         res.status(500).send('Hubo un error al crear la preferencia');
     }
 });
-
+// Ruta de bienvenida para el directorio raíz
+app.get('/', (req, res) => {
+    res.send('¡Bienvenido al servidor de integración con Mercado Pago!');
+  });
+  
 
 // Inicia el servidor
 app.listen(port, () => {
