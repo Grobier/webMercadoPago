@@ -142,7 +142,12 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     }
 
-    btnPagar.addEventListener('click', () => {
+    btnPagar.addEventListener('click', async () => {
+        // Activa el efecto de carga en el botón "Ir a Pagar"
+        btnPagar.classList.add("running");
+        const loader = document.getElementById('loader-pagar');
+        if (loader) loader.style.display = 'inline-block';
+    
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         let total = 0;
     
@@ -165,26 +170,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 unit_price: descuentoAplicado ? (precios[item.servicio] * 0.85) : precios[item.servicio]
             }));
     
-            // Envía solicitud al backend para crear la preferencia
-            fetch('https://webmercadopago.onrender.com/crear_preferencia', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ items }) // Enviamos la lista de productos al backend
-            })
-            .then(response => response.json())
-            .then(data => {
+            // Enviar solicitud al backend para crear la preferencia
+            try {
+                const response = await fetch('https://webmercadopago.onrender.com/crear_preferencia', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ items }) // Enviamos la lista de productos al backend
+                });
+    
+                const data = await response.json();
+    
                 if (data.init_point) {
+                    // Pausa breve antes de redirigir para mostrar el loader
+                    await new Promise(resolve => setTimeout(resolve, 500)); // 500 ms de espera
                     // Redirigir al usuario al flujo de pago de Mercado Pago
                     window.location.href = data.init_point;
                 } else {
                     console.error("Error: No se recibió el punto de inicio de Mercado Pago.");
                 }
-            })
-            .catch(error => console.error('Error al crear la preferencia:', error));
+            } catch (error) {
+                console.error('Error al crear la preferencia:', error);
+            } finally {
+                // Ocultar el loader si hubo un error
+                if (loader) loader.style.display = 'none';
+                btnPagar.classList.remove("running");
+            }
         } else {
             alert('El carrito está vacío. Agrega servicios antes de continuar.');
+            if (loader) loader.style.display = 'none';
+            btnPagar.classList.remove("running");
         }
     });    
     actualizarContador();

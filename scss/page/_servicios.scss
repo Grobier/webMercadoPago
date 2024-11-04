@@ -248,27 +248,35 @@ main {
       
     }
 
-    /* Estilos para el loader */
-.ld-ext-right .ld {
-  display: none;
-  margin-left: 10px; /* Espacio entre el texto y el loader */
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  border-top-color: transparent;
-  animation: spin 0.6s linear infinite;
+    #loader-pagar {
+      display: none;
+    }
+    
+
+  /* Estilo para el botón cuando está en modo "loading" */
+.ld-ext-right.running {
+  pointer-events: none; /* Desactiva clics adicionales */
+  opacity: 0.8;
 }
 
-.ld-ext-right.loading .ld {
-  display: inline-block; /* Muestra el loader cuando se está cargando */
+/* Estilo para el loader en el botón */
+.ld-ring.ld-spin {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s linear infinite;
 }
+
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
 }
+
 
 
     #btn-pagar,

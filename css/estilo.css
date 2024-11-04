@@ -403,7 +403,8 @@ main .carrito-popup {
   border-radius: 8px;
   z-index: 2000;
   display: none;
-  /* Estilos para el loader */
+  /* Estilo para el botón cuando está en modo "loading" */
+  /* Estilo para el loader en el botón */
 }
 main .carrito-popup h3 {
   margin-top: 0;
@@ -467,18 +468,21 @@ main .carrito-popup .total {
   text-align: right;
   font-weight: bold;
 }
-main .carrito-popup .ld-ext-right .ld {
+main .carrito-popup #loader-pagar {
   display: none;
-  margin-left: 10px; /* Espacio entre el texto y el loader */
+}
+main .carrito-popup .ld-ext-right.running {
+  pointer-events: none; /* Desactiva clics adicionales */
+  opacity: 0.8;
+}
+main .carrito-popup .ld-ring.ld-spin {
+  display: inline-block;
   width: 1em;
   height: 1em;
+  border: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  border: 2px solid #fff;
-  border-top-color: transparent;
-  animation: spin 0.6s linear infinite;
-}
-main .carrito-popup .ld-ext-right.loading .ld {
-  display: inline-block; /* Muestra el loader cuando se está cargando */
+  border-top-color: #fff;
+  animation: spin 1s linear infinite;
 }
 @keyframes spin {
   to {
