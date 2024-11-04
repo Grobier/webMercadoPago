@@ -403,6 +403,7 @@ main .carrito-popup {
   border-radius: 8px;
   z-index: 2000;
   display: none;
+  /* Estilos para el loader */
 }
 main .carrito-popup h3 {
   margin-top: 0;
@@ -465,6 +466,24 @@ main .carrito-popup #lista-carrito li .btn-eliminar:hover {
 main .carrito-popup .total {
   text-align: right;
   font-weight: bold;
+}
+main .carrito-popup .ld-ext-right .ld {
+  display: none;
+  margin-left: 10px; /* Espacio entre el texto y el loader */
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  animation: spin 0.6s linear infinite;
+}
+main .carrito-popup .ld-ext-right.loading .ld {
+  display: inline-block; /* Muestra el loader cuando se está cargando */
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 main .carrito-popup #btn-pagar,
 main .carrito-popup #btn-cerrar-carrito {

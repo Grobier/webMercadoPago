@@ -11,6 +11,9 @@
       name="keywords"
       content="Servicios de fisioterapia, rehabilitación física, entrenamiento personalizado, salud, recuperación muscular, Kine Health Motion"
     />
+    <!-- Loaders.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loaders.css/loaders.min.css">
+
     <!-- Opengraph-->
     <meta
       property="og:title"
@@ -225,6 +228,10 @@
       <!-- Overlay para el efecto de fondo nublado -->
       <div class="overlay" id="overlay"></div>
 
+      <!-- LDLoader -->
+      <script src="https://cdn.jsdelivr.net/npm/ldloader@1.3.1/ldloader.min.js"></script>
+
+
       <!-- Contenedor para mostrar el carrito de compras -->
       <div class="carrito-popup" id="carrito-container">
         <h3>Carrito de Compras</h3>
@@ -235,7 +242,10 @@
           <button id="btn-aplicar-descuento" class="btn btn-secondary">Aplicar</button>
         </div>
         <p id="valor-total">Total a pagar: $0</p>
-        <button id="btn-pagar" class="btn btn-success">Ir a Pagar</button>
+        <button id="btn-pagar" class="btn btn-success ld-ext-right">
+          <span>Ir a Pagar</span>
+          <div class="ld ld-ring ld-spin"></div>
+        </button>        
         <button id="btn-cerrar-carrito" class="btn btn-secondary">Seguir comprando</button>
       </div>
       

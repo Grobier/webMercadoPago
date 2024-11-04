@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const valorTotal = document.getElementById('valor-total');
     const codigoDescuentoInput = document.getElementById('codigo-descuento');
     const btnAplicarDescuento = document.getElementById('btn-aplicar-descuento');
+    
 
     const precios = {
         Rehabilitacion: 34000,
@@ -143,10 +144,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     btnPagar.addEventListener('click', () => {
+        btnPagar.classList.add("loading");
+
+
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         let total = 0;
     
         if (carrito.length > 0) {
+            document.getElementById('loader-pagar').style.display = 'inline-block'; // Mostrar el loader
+
             // Calcula el total considerando el descuento si está aplicado
             carrito.forEach(item => {
                 const precioUnitario = precios[item.servicio];

@@ -248,6 +248,29 @@ main {
       
     }
 
+    /* Estilos para el loader */
+.ld-ext-right .ld {
+  display: none;
+  margin-left: 10px; /* Espacio entre el texto y el loader */
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  animation: spin 0.6s linear infinite;
+}
+
+.ld-ext-right.loading .ld {
+  display: inline-block; /* Muestra el loader cuando se está cargando */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
     #btn-pagar,
     #btn-cerrar-carrito {
       width: 100%;
