@@ -144,9 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     btnPagar.addEventListener('click', () => {
-        //btnPagar.classList.add("loading");
-
-
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         let total = 0;
     
