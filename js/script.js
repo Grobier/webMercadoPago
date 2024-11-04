@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }));
     
             // Envía solicitud al backend para crear la preferencia
-            fetch('http://localhost:3000/crear_preferencia', {
+            fetch('https://webmercadopago.onrender.com/crear_preferencia', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
