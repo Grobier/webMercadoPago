@@ -4,16 +4,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const corsOptions = {
-    origin: 'https://grobbier.github.io', // reemplaza con el dominio de tu frontend
-    optionsSuccessStatus: 200 // para algunas configuraciones de navegadores
-};
-app.use(cors({
-    origin: 'https://tu-dominio.github.io'  // Reemplaza por el dominio exacto de tu frontend
-}));
-
-
-    
+const cors = require('cors');
+app.use(cors());
 
 
 // Configuración del Access Token
@@ -33,9 +25,9 @@ app.post('/crear_preferencia', async (req, res) => {
         const preferencia = {
             items: items,
             back_urls: {
-                success: "https://web-mercado-pago.vercel.app/success",
-                failure: "https://web-mercado-pago.vercel.app/failure",
-                pending: "https://web-mercado-pago.vercel.app/pending"
+                success: "http://localhost:3000/success",
+                failure: "http://localhost:3000/failure",
+                pending: "http://localhost:3000/pending"
             },
             auto_return: "approved",
         };
@@ -49,9 +41,9 @@ app.post('/crear_preferencia', async (req, res) => {
 });
 // Ruta de bienvenida para el directorio raíz
 app.get('/', (req, res) => {
-    res.send('¡Bienvenido al servidor de integración con Mercado Pago!');
-  });
-  
+  res.send('¡Bienvenido al servidor de integración con Mercado Pago!');
+});
+
 
 // Inicia el servidor
 app.listen(port, () => {
