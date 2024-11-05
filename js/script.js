@@ -177,7 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ items }) // Enviamos la lista de productos al backend
+                    body: JSON.stringify({ items }), // Enviamos la lista de productos al backend
+                    mode: 'cors' // Configura el modo de CORS
+
                 });
     
                 const data = await response.json();
