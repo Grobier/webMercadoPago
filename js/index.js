@@ -25,9 +25,9 @@ app.post('/crear_preferencia', async (req, res) => {
         const preferencia = {
             items: items,
             back_urls: {
-                success: "http://localhost:3000/success",
-                failure: "http://localhost:3000/failure",
-                pending: "http://localhost:3000/pending"
+                success: "https://web-mercado-pago.vercel.app/success",
+                failure: "https://web-mercado-pago.vercel.app/failure",
+                pending: "https://web-mercado-pago.vercel.app/pending"
             },
             auto_return: "approved",
         };

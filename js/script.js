@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             // Enviar solicitud al backend para crear la preferencia
             try {
-                const response = await fetch('https://webmercadopago.onrender.com/crear_preferencia', {
+                const response = await fetch('https://web-mercado-pago.vercel.app/crear_preferencia', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
