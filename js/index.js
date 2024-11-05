@@ -4,8 +4,15 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const cors = require('cors');
-app.use(cors());
+const corsOptions = {
+    origin: 'https://grobbier.github.io', // reemplaza con el dominio de tu frontend
+    optionsSuccessStatus: 200 // para algunas configuraciones de navegadores
+};
+app.use(cors({
+    origin: 'https://tu-dominio.github.io'  // Reemplaza por el dominio exacto de tu frontend
+}));
+
+
     
 
 
